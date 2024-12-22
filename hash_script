@@ -1,0 +1,14 @@
+#!/bin/bash
+# hash_script: Script to hash a 4-digit integer
+
+if [ $# -eq 0 ]; then
+  echo "Please provide a 4-digit integer."
+  exit 1
+fi
+
+# Read the input number
+input=$1
+
+# Calculate SHA-256 hash and save it to hash_output.txt
+echo -n "$input" | sha256sum > hash_output.txt
+echo "Hash of the input saved to hash_output.txt"
